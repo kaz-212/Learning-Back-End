@@ -1,0 +1,28 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head> -->
+
+  <!-- include the head template like below so we dont need to keep copying the CDN's etc. the '-' means treat it like html-->
+  <%- include('partials/head') %> 
+
+  <body>
+    <%- include('partials/navbar') %> 
+    <div class="container">
+      <h1>The Home Page <%= 3*5 %></h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
+        quibusdam a enim sit ex pariatur quos quae accusantium odit? Ducimus rem
+        earum, quae ex reiciendis perferendis vel eos saepe!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
+        quibusdam a enim sit ex pariatur quos quae accusantium odit? Ducimus rem
+        earum, quae ex reiciendis perferendis vel eos saepe!
+      </p>
+    </div>
+  </body>
+</html>
