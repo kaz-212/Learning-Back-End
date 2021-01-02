@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+  </head>
+  <body>
+    <h1>Edit</h1>
+    <!-- can only send get/post requests with forms so we need to install package "$ npm i method-override" -->
+    <!-- here we add a query onto url with param "_method" (defined in index.js) and assign it to PATCH -->
+    <form method="POST" action="/comments/<%= comment.id %>?_method=PATCH">
+      <textarea name="comment" id="comment" cols="30" rows="10">
+        <%= comment.comment %> 
+      </textarea>
+      <button>Save</button>
+    </form>
+  </body>
+</html>
