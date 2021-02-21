@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Product</title>
+  </head>
+  <body>
+    <h1>Edit Product</h1>
+    <!-- adding the query string "?_method=PUT" changes it to a put request using the method-override package -->
+    <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+      <label for="name">Product name:</label>
+      <!-- value param is what the text should already be in the box before you click it -->
+      <input type="text" name="name" placeholder="product name" id="name" value="<%= product.name %>" />
+      <label for="price">Price:</label>
+      <!-- step=".01" allows the number to be 2 decimals (instead of integers) -->
+      <input
+        type="number"
+        name="price"
+        placeholder="product price"
+        id="price"
+        step=".01"
+        value="<%= product.price %>"
+      />
+      <label for="category">Select Category:</label>
+      <select name="category" id="category">
+        <!-- dynamically adding in the list of category options. making sure the correct one is selected  -->
+        <!-- if product.category = the option being made, add selected, else add an empty string -->
+        <% for (let category of categories) { %>
+        <option value="<%= category %>" <%= product.category === category ? 'selected':'' %>> <%= category %></option>
+        <% } %>
+      </select>
+      <button>Submit</button>
+    </form>
+    <a href="/products/<%= product._id %> ">Cancel</a>
+  </body>
+</html>
